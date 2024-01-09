@@ -1,3 +1,4 @@
+import { Stack, Button } from '@mui/material'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -21,6 +22,11 @@ export default function Home() {
             Get started by editing&nbsp;
             <code className={styles.code}>src/pages/index.tsx</code>
           </p>
+          <Stack spacing={2} direction='row'>
+            <Button variant='text'>Text</Button>
+            <Button variant='contained'>Contained</Button>
+            <Button variant='outlined'>Outlined</Button>
+          </Stack>
           <div>
             <a href='#' target='_blank' rel='noopener noreferrer'>
               By{' '}
