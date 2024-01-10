@@ -14,6 +14,10 @@ const color = {
     rightRed: '#F9CFCF',
     red: '#EB5554',
   },
+  gradient: {
+    blueToPinkGradient:
+      'linear-gradient(90deg, rgba(141, 139, 226, 1), rgba(253, 187, 203, 1))',
+  },
   text: {
     darkAqua: '#349BF9',
     darkBlue: '#051ADF',
@@ -58,6 +62,7 @@ const font = {
 
 // color
 export const bgColor = color.background
+export const gradient = color.gradient
 export const textColor = color.text
 export const borderColor = color.border
 

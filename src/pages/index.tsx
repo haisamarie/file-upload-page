@@ -1,5 +1,10 @@
+import { BaseLayout } from '@/components/Layouts/BaseLayout'
 const Home = () => {
-  return <h1>Hello World!!</h1>
+  return (
+    <BaseLayout>
+      <h1>profile</h1>
+    </BaseLayout>
+  )
 }
 
 export default Home
