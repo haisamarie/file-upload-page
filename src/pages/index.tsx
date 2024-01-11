@@ -1,8 +1,9 @@
 import { BaseLayout } from '@/components/Layouts/BaseLayout'
+import { PageTitle } from '@/components/Titles/PageTitle'
 const Home = () => {
   return (
     <BaseLayout>
-      <h1>profile</h1>
+      <PageTitle title='profile' />
     </BaseLayout>
   )
 }

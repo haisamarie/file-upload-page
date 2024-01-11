@@ -52,6 +52,8 @@ const font = {
     lg: '20px',
     xl: '24px',
     xxl: '28px',
+    xxxl: '32px',
+    xxxx: '38px',
   },
   weight: {
     light: '300',
