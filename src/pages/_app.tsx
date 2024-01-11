@@ -1,7 +1,4 @@
-// eslint-disable-next-line
-//import '@/styles/globals.css'
-// eslint-disable-next-line
-import '@/styles/reset.css'
+import '@/assets/css/reset.css'
 import { CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material'
 
 import { theme } from '@/utils/themeConfigs'
