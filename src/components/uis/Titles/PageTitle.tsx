@@ -10,6 +10,8 @@ const BasePageTitle = styled('h1')`
   line-height: 1.4;
   padding: 0.25em 1em;
   display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
 
   &:before,
   &:after {

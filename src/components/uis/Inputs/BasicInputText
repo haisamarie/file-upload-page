@@ -1,0 +1,69 @@
+import styled from '@emotion/styled'
+import { TextField, TextFieldProps } from '@mui/material'
+//import { FieldError, UseFormRegisterReturn } from 'react-hook-form'
+import {
+  bgColor,
+  textColor,
+  fontSize,
+  fontWeight,
+} from '../../../utils/themeConfigs/customTheme'
+
+const BASE_HEIGHT_PX = '44px'
+
+export const CustomTextField = styled(TextField)<{ textColor?: string }>`
+  width: 100%;
+  .MuiOutlinedInput-root {
+    background: ${({ error }) => (error ? bgColor.rightRed : bgColor.white)} !important;
+    border: #565656;
+    border-radius: 8px;
+    height: ${BASE_HEIGHT_PX};
+  }
+  .MuiInputBase-input {
+    color: ${({ textColor }) => textColor || ''};
+    padding: 10px 16px;
+    font-size: ${fontSize.sm};
+    font-weight: ${fontWeight.light};
+    &::placeholder {
+      color: ${textColor.gray};
+      opacity: 1;
+    }
+  }
+`
+
+// TextFieldPropsの型をオーバーライド
+interface CustomTextFieldProps extends Omit<TextFieldProps, 'id' | 'label' | 'onClick'> {}
+
+// TextField要素以外の型
+type AdditionalTextFieldProps = {
+  id?: string
+  //register?: UseFormRegisterReturn
+  maxLength?: number
+  type?: 'text' | 'number'
+  //errors?: FieldError | undefined
+}
+
+export type InputTextProps = CustomTextFieldProps & AdditionalTextFieldProps
+
+export const BasicInputText = (props: InputTextProps) => {
+  const {
+    id,
+    inputProps,
+    maxLength = 255,
+    type = 'text',
+    ...customTextFieldProps
+  } = props
+
+  return (
+    <CustomTextField
+      id={id}
+      type={type}
+      error={!!errors}
+      {...customTextFieldProps}
+      inputProps={{
+        maxLength,
+        ...inputProps,
+      }}
+      {...register}
+    />
+  )
+}

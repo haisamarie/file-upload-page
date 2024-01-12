@@ -3,7 +3,7 @@ import { CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material'
 
 import { theme } from '@/utils/themeConfigs'
 
-import { Meta } from '@/components/Other/Meta'
+import { Meta } from '@/components/layouts/Other/Meta'
 
 import type { AppProps } from 'next/app'
 
