@@ -7,7 +7,7 @@ const color = {
       'linear-gradient(0deg, rgba(147, 203, 255, 0.7) 0%, rgba(147, 203, 255, 0.7) 100%)',
     blue: '#1C7AE8',
     white: '#FFFFFF',
-    darkGray: '#A0A0A0',
+    darkGray: '#333',
     gray: '#E7E7E7',
     lightGray: '#F7F5F5',
     green: '#80C739',

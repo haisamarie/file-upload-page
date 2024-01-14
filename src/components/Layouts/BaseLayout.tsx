@@ -3,29 +3,30 @@ import { ReactNode } from 'react'
 
 import { gradient, textColor } from '@/utils/themeConfigs/customTheme'
 
+import { Header } from '@/components/layouts/Header'
+import { Sidebar } from '@/components/layouts/Sidebar'
+
 interface LayoutProps {
   children: ReactNode
 }
 
 const Main = styled('main')`
   overflow: scroll;
-  height: 100vh;
   background-image: ${gradient.blueToPinkGradient};
   color: ${textColor.white};
-`
-const Wrap = styled('div')`
-  text-align: center;
-  padding: 32px;
-  height: 100vh;
   display: flex;
-  flex-flow: column;
-  min-height: 100vh;
+  height: calc(100vh - 64px);
 `
+const Wrap = styled('section')``
 
 export const BaseLayout = ({ children }: LayoutProps) => {
   return (
-    <Main>
-      <Wrap>{children}</Wrap>
-    </Main>
+    <>
+      <Header />
+      <Main>
+        <Sidebar />
+        <Wrap>{children}</Wrap>
+      </Main>
+    </>
   )
 }
