@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 import { ReactNode } from 'react'
 
-import { gradient, textColor } from '@/utils/themeConfigs/customTheme'
-
 import { Header } from '@/components/layouts/Header'
 import { Sidebar } from '@/components/layouts/Sidebar'
+
+import { gradient, textColor } from '@/functions/themeConfigs/customTheme'
 
 interface LayoutProps {
   children: ReactNode

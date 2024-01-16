@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { bgColor } from '@/utils/themeConfigs/customTheme'
+import { bgColor } from '@/functions/themeConfigs/customTheme'
 
 const HeaderBox = styled('section')`
   background-color: ${bgColor.blue};

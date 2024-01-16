@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { fontSize, fontWeight, textColor } from '@/utils/themeConfigs/customTheme'
+import { fontSize, fontWeight, textColor } from '@/functions/themeConfigs/customTheme'
 const BasePageTitle = styled('h1')`
   font-size: ${fontSize.xxxx};
   font-weight: ${fontWeight.bold};

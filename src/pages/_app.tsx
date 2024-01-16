@@ -1,9 +1,10 @@
-import '@/assets/css/reset.css'
+import '@/style/reset.css'
+import '@/style/base.css'
 import { CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material'
 
-import { theme } from '@/utils/themeConfigs'
-
 import { Meta } from '@/components/layouts/Other/Meta'
+
+import { theme } from '@/functions/themeConfigs'
 
 import type { AppProps } from 'next/app'
 
