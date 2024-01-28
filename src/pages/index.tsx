@@ -1,8 +1,8 @@
-import { BaseLayout } from '@/components/layouts/BaseLayout'
+import { Layout } from '@/components/layouts/Layout'
 import { PageTitle } from '@/components/uis/Titles/PageTitle'
 const Home = () => {
   return (
-    <BaseLayout>
+    <Layout>
       <PageTitle title='profile' />
       <div>
         <h2>名前</h2>
@@ -16,7 +16,7 @@ const Home = () => {
         <h2>所属</h2>
         <p>システム本部</p>
       </div>
-    </BaseLayout>
+    </Layout>
   )
 }
 

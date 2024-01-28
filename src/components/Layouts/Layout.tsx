@@ -19,7 +19,7 @@ const Main = styled('main')`
 `
 const Wrap = styled('section')``
 
-export const BaseLayout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />

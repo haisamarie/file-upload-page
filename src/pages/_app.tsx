@@ -1,5 +1,4 @@
-import '@/style/reset.css'
-import '@/style/base.css'
+import '@/style/reset.module.css'
 import { CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material'
 
 import { Meta } from '@/components/layouts/Other/Meta'
