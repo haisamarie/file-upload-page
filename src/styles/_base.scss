@@ -1,0 +1,53 @@
+@use '@/styles/settings/color' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: $c-gray;
+  font-family: 'Hiragino Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  position: relative;
+
+  &.scroll-prevent {
+    overflow: hidden;
+  }
+}
+
+:root {
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+}
+
+img {
+  vertical-align: top;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  word-break: break-all;
+}
+
+hr {
+  background: ('border', 'l1');
+  display: block;
+  height: 1px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}

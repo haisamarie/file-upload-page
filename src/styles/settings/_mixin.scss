@@ -1,0 +1,155 @@
+/* Setting Layer */
+
+$iphone5: 320px;
+$sp: 576px;
+$tab: 768px;
+$pc: 1042px;
+
+@mixin iphone5 {
+  @media (max-width: ($iphone5)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+/* line-height */
+@mixin line-height($num: 16, $line: 24) {
+  line-height: ($line / $num);
+}
+
+/* 絶対配置中央揃え */
+@mixin center-pos {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vertical-center {
+  left: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* flex */
+@mixin flex {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* clearfix */
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+/* 画像などを縦横比を維持したままレスポンシブ対応 */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    float: left;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  & > :first-child {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* 三角 */
+@mixin triangle($direction, $width, $height, $color: currentColor) {
+  @if not
+    index(
+      upward rightward downward leftward upper-left upper-right lower-right lower-left,
+      $direction
+    )
+  {
+    @error 'triangle()の方向は"upward","rightward","downward","leftward","upper-left","upper-right","lower-right","lower-left"から指定してください';
+  }
+
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  @if $direction == upward {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 ($width / 2) $height ($width / 2);
+  }
+
+  @if $direction == rightward {
+    border-color: transparent transparent transparent $color;
+    border-width: ($height / 2) 0 ($height / 2) $width;
+  }
+
+  @if $direction == downward {
+    border-color: $color transparent transparent transparent;
+    border-width: $height ($width / 2) 0 ($width / 2);
+  }
+
+  @if $direction == leftward {
+    border-color: transparent $color transparent transparent;
+    border-width: ($height / 2) $width ($height / 2) 0;
+  }
+
+  @if $direction == upper-left {
+    border-color: $color transparent transparent transparent;
+    border-width: $height $height 0 0;
+  }
+
+  @if $direction == upper-right {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $height $height 0;
+  }
+
+  @if $direction == lower-right {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 0 $height $height;
+  }
+
+  @if $direction == lower-left {
+    border-color: transparent transparent transparent $color;
+    border-width: $height 0 0 $height;
+  }
+}

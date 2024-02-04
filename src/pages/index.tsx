@@ -1,9 +1,7 @@
 import { Layout } from '@/components/layouts/Layout'
-import { PageTitle } from '@/components/uis/Titles/PageTitle'
 const Home = () => {
   return (
     <Layout>
-      <PageTitle title='profile' />
       <div>
         <h2>名前</h2>
         <p>山田太郎</p>
