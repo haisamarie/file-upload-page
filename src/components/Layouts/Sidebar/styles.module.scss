@@ -1,0 +1,9 @@
+@use '@/styles/settings/color' as *;
+
+.side-bar {
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  height: calc(100vh - 64px);
+  overflow: scroll;
+}

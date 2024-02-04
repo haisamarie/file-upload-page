@@ -1,0 +1,14 @@
+@use '@/styles/settings/color' as *;
+
+.header-wrapper {
+  border-bottom: 1px solid $gray-light;
+  height: 70px;
+  padding: 0 2rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}

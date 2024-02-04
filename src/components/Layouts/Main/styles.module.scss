@@ -1,0 +1,8 @@
+@use '@/styles/settings/color' as *;
+
+.main {
+  color: $white;
+  display: flex;
+  height: calc(100vh - 70px);
+  overflow: scroll;
+}
