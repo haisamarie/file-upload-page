@@ -5,8 +5,10 @@
   background-color: $primary;
   color: $white;
   display: flex;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 70px);
   overflow: scroll;
+  position: relative;
+  top: 70px;
   width: 15%;
 }
 
@@ -18,10 +20,6 @@
   display: block;
   font-size: rem(18px);
   padding: 1em;
-
-  :hover {
-    background-color: red;
-  }
 }
 
 .active-text {

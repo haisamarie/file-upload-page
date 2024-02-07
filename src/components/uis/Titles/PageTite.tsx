@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-interface pageTitleProps {
+type pageTitleProps = {
   title: string
 }
 

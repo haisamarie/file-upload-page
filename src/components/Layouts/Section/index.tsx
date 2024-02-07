@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import styles from './styles.module.scss'
 
-interface SectionProps {
+type SectionProps = {
   children: ReactNode
 }
 

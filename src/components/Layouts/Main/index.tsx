@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import styles from './styles.module.scss'
 
-interface MainProps {
+type MainProps = {
   children: ReactNode
 }
 

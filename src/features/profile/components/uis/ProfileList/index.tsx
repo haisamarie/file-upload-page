@@ -1,10 +1,10 @@
 import styles from './styles.module.scss'
 
-export interface UserItem {
+export type UserItem = {
   term: string
   description: string
 }
-interface profileProps {
+type profileProps = {
   items: UserItem[]
 }
 

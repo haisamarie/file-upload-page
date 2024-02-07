@@ -2,6 +2,7 @@ import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
+import { Button } from '@/components/uis/Button'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
 import { ProfileList } from '@/features/profile/components/uis/ProfileList'
@@ -20,6 +21,10 @@ const Home = () => {
     { term: 'メールアドレス', description: userData.email },
     { term: '事業部', description: userData.department },
   ]
+
+  const handleClick = () => {
+    alert('Button clicked!')
+  }
   return (
     <>
       <Header />
@@ -31,6 +36,9 @@ const Home = () => {
           <Section>
             <ProfileList items={items} />
           </Section>
+          <div className={styles['button-wrap']}>
+            <Button onClick={handleClick}>Edit</Button>
+          </div>
         </Main>
       </div>
     </>
