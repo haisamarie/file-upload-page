@@ -8,7 +8,7 @@ import { ProfileList } from '@/features/profile/components/uis/ProfileList'
 
 import styles from './styles.module.scss'
 
-const Home = () => {
+const File = () => {
   const userData = {
     name: '山田花子',
     email: 'example.co.jp',
@@ -26,7 +26,7 @@ const Home = () => {
       <div className={styles['contents-wrap']}>
         <Sidebar />
         <Main>
-          <PageTitle title='Profile' />
+          <PageTitle title='File' />
 
           <Section>
             <ProfileList items={items} />
@@ -37,4 +37,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default File

@@ -1,0 +1,19 @@
+@use '@/styles/settings/color' as *;
+
+.wrap {
+  display: flex;
+  padding: 24px 0;
+}
+
+.wrap:not(:last-child) {
+  border-bottom: 1px solid $gray-light;
+}
+
+.caption {
+  width: 30%;
+}
+
+.text {
+  padding-left: 1em;
+  width: 65%;
+}

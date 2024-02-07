@@ -1,7 +1,7 @@
 @use '@/styles/settings/color' as *;
 
 .main {
-  color: $white;
+  background-color: $gray-very-light;
   height: calc(100vh - 70px);
   padding: 40px;
   width: 85%;
