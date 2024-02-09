@@ -1,8 +1,11 @@
+import { useState } from 'react'
+
 import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
 import { Button } from '@/components/uis/Button'
+import { Modal } from '@/components/uis/Modal'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
 import { ProfileList } from '@/features/profile/components/uis/ProfileList'
@@ -22,9 +25,11 @@ const Home = () => {
     { term: '事業部', description: userData.department },
   ]
 
-  const handleClick = () => {
-    alert('Button clicked!')
-  }
+  const [modalIsOpen, setIsOpen] = useState(false)
+
+  const openModal = () => setIsOpen(true)
+  const closeModal = () => setIsOpen(false)
+
   return (
     <>
       <Header />
@@ -37,8 +42,9 @@ const Home = () => {
             <ProfileList items={items} />
           </Section>
           <div className={styles['button-wrap']}>
-            <Button onClick={handleClick}>Edit</Button>
+            <Button onClick={openModal}>Edit</Button>
           </div>
+          <Modal isOpen={modalIsOpen} onRequestClose={closeModal} />
         </Main>
       </div>
     </>
