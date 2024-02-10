@@ -20,6 +20,7 @@ body {
   color: $black;
   font-family: 'Hiragino Sans', sans-serif;
   font-weight: 300;
+  height: 100%;
   line-height: 1.5;
   position: relative;
 
@@ -30,6 +31,8 @@ body {
 
 :root {
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
+
+  height: 100%;
 }
 
 img {

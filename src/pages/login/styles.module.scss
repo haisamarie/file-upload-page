@@ -1,16 +1,16 @@
 @use '@/styles/settings/color' as *;
 
-.contents-wrap {
+.wrap {
   display: flex;
+  height: 100vh;
   justify-content: space-between;
-  text-align: center;
 }
 
 .main {
   background-color: $gray-very-light;
-  height: calc(100vh - 70px);
+  height: 100%;
+  margin-top: 70px;
+  overflow: scroll;
   padding: 40px;
-  position: relative;
-  top: 70px;
   width: 100%;
 }
