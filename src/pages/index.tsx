@@ -8,6 +8,7 @@ import { Button } from '@/components/uis/Button'
 import { Modal } from '@/components/uis/Modal'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
+import { ProfileForm } from '@/features/profile/components/uis/ProfileForm'
 import { ProfileList } from '@/features/profile/components/uis/ProfileList'
 
 import styles from './styles.module.scss'
@@ -37,14 +38,19 @@ const Home = () => {
         <Sidebar />
         <Main>
           <PageTitle title='Profile' />
-
           <Section>
             <ProfileList items={items} />
           </Section>
           <div className={styles['button-wrap']}>
             <Button onClick={openModal}>Edit</Button>
           </div>
-          <Modal isOpen={modalIsOpen} onRequestClose={closeModal} />
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            title='profileを編集する'
+          >
+            <ProfileForm />
+          </Modal>
         </Main>
       </div>
     </>

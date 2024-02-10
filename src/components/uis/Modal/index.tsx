@@ -1,13 +1,14 @@
+import { ReactNode } from 'react'
 import ReactModal from 'react-modal'
 
-import { Button } from '@/components/uis/Button'
-
-//import style from './styles.module.scss'
+import styles from './styles.module.scss'
 
 type ModalProps = {
   isOpen: boolean
   onRequestClose: () => void
   style?: string
+  title: string
+  children: ReactNode
 }
 
 const modalStyle = {
@@ -19,30 +20,15 @@ const modalStyle = {
     margin: '0 auto',
     borderRadius: '8px',
     border: 'none',
-    padding: '40px',
+    padding: '60px',
   },
 }
 
-export const Modal = ({ isOpen, onRequestClose }: ModalProps) => {
+export const Modal = ({ isOpen, onRequestClose, title, children }: ModalProps) => {
   return (
     <ReactModal isOpen={isOpen} onRequestClose={onRequestClose} style={modalStyle}>
-      <h2>profileを編集する</h2>
-      <form action=''>
-        <label>
-          氏名
-          <input type='text' name='name' />
-        </label>
-        <label>
-          メールアドレス
-          <input type='email' name='name' />
-        </label>
-        <label>
-          事業部
-          <input type='text' name='name' />
-        </label>
-        <Button onClick={onRequestClose}>Chancel</Button>
-        <Button onClick={onRequestClose}>Submit</Button>
-      </form>
+      <h2 className={styles['title']}>{title}</h2>
+      {children}
     </ReactModal>
   )
 }

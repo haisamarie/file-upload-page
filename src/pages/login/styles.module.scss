@@ -1,0 +1,16 @@
+@use '@/styles/settings/color' as *;
+
+.contents-wrap {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.main {
+  background-color: $gray-very-light;
+  height: calc(100vh - 70px);
+  padding: 40px;
+  position: relative;
+  top: 70px;
+  width: 100%;
+}

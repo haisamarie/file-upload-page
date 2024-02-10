@@ -1,0 +1,19 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.label-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.label-text {
+  color: $secondary;
+  display: block;
+  font-size: rem(14px);
+  padding: 10px;
+  width: 100%;
+}
