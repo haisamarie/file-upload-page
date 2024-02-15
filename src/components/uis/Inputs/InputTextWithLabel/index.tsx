@@ -10,6 +10,7 @@ type FormFieldProps<FORM_TYPE extends FieldValues> = {
   control: Control<FORM_TYPE>
   error?: string
   type: 'email' | 'text' | 'password'
+  placeholder: string
 }
 
 export const InputTextWithLabel = <FORM_TYPE extends FieldValues>({
@@ -18,12 +19,18 @@ export const InputTextWithLabel = <FORM_TYPE extends FieldValues>({
   control,
   error,
   type,
+  placeholder,
 }: FormFieldProps<FORM_TYPE>): React.ReactElement => {
   return (
     <div>
       <label className={styles['label-wrap']}>
         <span className={styles['label-text']}>{label}</span>
-        <InputControl name={name} control={control} type={type} />
+        <InputControl
+          placeholder={placeholder}
+          name={name}
+          control={control}
+          type={type}
+        />
         {error && <p className={styles['error-text']}>{error}</p>}
       </label>
     </div>

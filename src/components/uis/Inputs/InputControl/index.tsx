@@ -6,12 +6,14 @@ type InputControlProps<FORM_TYPE extends FieldValues> = {
   name: FieldPath<FORM_TYPE>
   control: Control<FORM_TYPE>
   type: 'email' | 'text' | 'password'
+  placeholder: string
 }
 
 export const InputControl = <FORM_TYPE extends FieldValues>({
   name,
   control,
   type,
+  placeholder,
 }: InputControlProps<FORM_TYPE>): React.ReactElement => {
   const { field } = useController({
     name,
@@ -25,6 +27,7 @@ export const InputControl = <FORM_TYPE extends FieldValues>({
       onBlur={field.onBlur}
       value={field.value as string}
       type={type}
+      placeholder={placeholder}
     />
   )
 }

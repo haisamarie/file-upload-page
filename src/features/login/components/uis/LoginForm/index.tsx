@@ -31,9 +31,11 @@ export const LoginForm = () => {
         control={control}
         error={errors.email?.message}
         type='email'
+        placeholder='メールアドレスを入力してください'
       />
       <InputTextWithLabel
         label='パスワード'
+        placeholder='パスワードを入力してください'
         name='password'
         control={control}
         error={errors.password?.message}

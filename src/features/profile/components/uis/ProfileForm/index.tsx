@@ -33,6 +33,7 @@ export const ProfileForm = () => {
         type='text'
         name='name'
         label='氏名'
+        placeholder='氏名を入力してください'
         control={control}
       />
       <InputTextWithLabel
@@ -41,6 +42,7 @@ export const ProfileForm = () => {
         control={control}
         error={errors.email?.message}
         type='email'
+        placeholder='メールアドレスを入力してください'
       />
       <InputTextWithLabel
         type='text'
@@ -48,6 +50,7 @@ export const ProfileForm = () => {
         label='事業部'
         control={control}
         error={errors.division?.message}
+        placeholder='事業部を入力してください'
       />
 
       <div className={styles['button-wrap']}>

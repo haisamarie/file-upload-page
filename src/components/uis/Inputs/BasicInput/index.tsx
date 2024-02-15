@@ -9,6 +9,7 @@ type InputProps = {
   inputRef?: Ref<HTMLInputElement>
   disabled?: boolean
   type: 'email' | 'text' | 'password'
+  placeholder?: string
 }
 
 export const BasicInput = ({
@@ -18,9 +19,12 @@ export const BasicInput = ({
   inputRef,
   disabled,
   type,
+  placeholder,
+  ...props
 }: InputProps): JSX.Element => {
   return (
     <input
+      placeholder={placeholder}
       className={styles['input']}
       ref={inputRef}
       onChange={(e) => onChange(e.target.value)}
@@ -28,6 +32,7 @@ export const BasicInput = ({
       value={value}
       type={type}
       disabled={disabled}
+      {...props}
     ></input>
   )
 }
