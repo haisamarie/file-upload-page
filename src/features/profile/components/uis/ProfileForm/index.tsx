@@ -18,7 +18,10 @@ export const ProfileForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProfileFormProps>({ mode: 'onBlur', resolver: zodResolver(profileSchema) })
+  } = useForm<ProfileFormProps>({
+    mode: 'onChange',
+    resolver: zodResolver(profileSchema),
+  })
 
   const onSubmit = (data: ProfileFormProps) => {
     console.log(data)

@@ -19,7 +19,8 @@
 }
 
 .input {
-  border-bottom: 2px solid $gray-light;
+  border: 1px solid $gray-light;
+  border-radius: 8px;
   padding: 10px;
   width: 100%;
 
@@ -28,7 +29,7 @@
   }
 
   &:focus {
-    border-bottom: 2px solid $blue-light;
+    border: 1px solid $blue-light;
   }
 }
 

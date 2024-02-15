@@ -18,7 +18,7 @@ export const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormProps>({ mode: 'onBlur', resolver: zodResolver(loginSchema) })
+  } = useForm<LoginFormProps>({ mode: 'onChange', resolver: zodResolver(loginSchema) })
 
   const onSubmit = (data: LoginFormProps) => {
     console.log(data)
