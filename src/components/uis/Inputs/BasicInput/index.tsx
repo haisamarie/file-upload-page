@@ -1,19 +1,33 @@
+import React, { Ref } from 'react'
+
 import styles from './styles.module.scss'
 
 type InputProps = {
-  type: string
-  name: string
-  placeholder: string
+  value: string
+  onChange: (value: string) => void
+  onBlur?: () => void
+  inputRef?: Ref<HTMLInputElement>
+  disabled?: boolean
+  type: 'email' | 'text' | 'password'
 }
 
-export const BasicInput = ({ type, name, placeholder, ...props }: InputProps) => {
+export const BasicInput = ({
+  value = '',
+  onChange,
+  onBlur,
+  inputRef,
+  disabled,
+  type,
+}: InputProps): JSX.Element => {
   return (
     <input
-      type={type}
-      name={name}
       className={styles['input']}
-      placeholder={placeholder}
-      {...props}
-    />
+      ref={inputRef}
+      onChange={(e) => onChange(e.target.value)}
+      onBlur={onBlur}
+      value={value}
+      type={type}
+      disabled={disabled}
+    ></input>
   )
 }

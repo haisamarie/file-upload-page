@@ -42,7 +42,9 @@ const Home = () => {
             <ProfileList items={items} />
           </Section>
           <div className={styles['button-wrap']}>
-            <Button onClick={openModal}>Edit</Button>
+            <Button type='submit' onClick={openModal}>
+              Edit
+            </Button>
           </div>
           <Modal
             isOpen={modalIsOpen}

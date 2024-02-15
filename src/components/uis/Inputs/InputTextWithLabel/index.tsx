@@ -1,19 +1,31 @@
-import { BasicInput } from '@/components/uis/Inputs/BasicInput'
+import { Control, FieldValues, FieldPath } from 'react-hook-form'
+
+import { InputControl } from '@/components/uis/Inputs/InputControl'
 
 import styles from './styles.module.scss'
 
-type InputProps = {
-  type: string
-  name: string
-  placeholder: string
-  label: string
+type FormFieldProps<FORM_TYPE extends FieldValues> = {
+  label?: string
+  name: FieldPath<FORM_TYPE>
+  control: Control<FORM_TYPE>
+  error?: string
+  type: 'email' | 'text' | 'password'
 }
 
-export const InputTextWithLabel = ({ type, name, placeholder, label }: InputProps) => {
+export const InputTextWithLabel = <FORM_TYPE extends FieldValues>({
+  label,
+  name,
+  control,
+  error,
+  type,
+}: FormFieldProps<FORM_TYPE>): React.ReactElement => {
   return (
-    <label className={styles['label-wrap']}>
-      <span className={styles['label-text']}>{label}</span>
-      <BasicInput type={type} name={name} placeholder={placeholder} />
-    </label>
+    <div>
+      <label className={styles['label-wrap']}>
+        <span className={styles['label-text']}>{label}</span>
+        <InputControl name={name} control={control} type={type} />
+        {error && <span>{error}</span>}
+      </label>
+    </div>
   )
 }

@@ -17,3 +17,17 @@
   padding: 10px;
   width: 100%;
 }
+
+.input {
+  border-bottom: 2px solid $gray-very-light;
+  padding: 10px;
+  width: 100%;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-bottom: 2px solid $blue-light;
+  }
+}

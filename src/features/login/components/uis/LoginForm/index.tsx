@@ -1,26 +1,44 @@
+import { useForm } from 'react-hook-form'
+
 import { Button } from '@/components/uis/Button'
 import { InputTextWithLabel } from '@/components/uis/Inputs/InputTextWithLabel'
 
 import styles from './styles.module.scss'
 
+type LoginFormProps = {
+  email: string
+  password: string
+}
+
 export const LoginForm = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormProps>()
+
+  const onSubmit = (data: LoginFormProps) => {
+    console.log(data)
+  }
   return (
-    <form action=''>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <InputTextWithLabel
-        type='email'
-        name='email'
         label='メールアドレス'
-        placeholder='入力してください'
+        name='email'
+        control={control}
+        error={errors.email?.message}
+        type='email'
       />
       <InputTextWithLabel
-        type='password'
-        name='password'
         label='パスワード'
-        placeholder='入力してください'
+        name='password'
+        control={control}
+        error={errors.password?.message}
+        type='password'
       />
 
       <div className={styles['button-wrap']}>
-        <Button>Submit</Button>
+        <Button type='submit'>Submit</Button>
       </div>
     </form>
   )

@@ -6,11 +6,12 @@ type ButtonProps = {
   children: ReactNode
   isDisabled?: boolean
   onClick?: () => void
+  type: 'submit' | 'reset' | 'button'
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+export const Button = ({ children, onClick, type }: ButtonProps) => {
   return (
-    <button onClick={onClick} className={styles['button']}>
+    <button type={type} onClick={onClick} className={styles['button']}>
       {children}
     </button>
   )
