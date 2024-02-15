@@ -1,22 +1,24 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
 import { InputTextWithLabel } from '@/components/uis/Inputs/InputTextWithLabel'
 
+import { profileSchema } from '@/features/profile/hooks/schemas/validationSchema'
+
 import styles from './styles.module.scss'
 
 type ProfileFormProps = {
-  email: string
   name: string
+  email: string
   division: string
 }
-
 export const ProfileForm = () => {
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProfileFormProps>()
+  } = useForm<ProfileFormProps>({ mode: 'onBlur', resolver: zodResolver(profileSchema) })
 
   const onSubmit = (data: ProfileFormProps) => {
     console.log(data)

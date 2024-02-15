@@ -1,7 +1,10 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
 import { InputTextWithLabel } from '@/components/uis/Inputs/InputTextWithLabel'
+
+import { loginSchema } from '@/features/login/hooks/schemas/validationSchema'
 
 import styles from './styles.module.scss'
 
@@ -15,7 +18,7 @@ export const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormProps>()
+  } = useForm<LoginFormProps>({ mode: 'onBlur', resolver: zodResolver(loginSchema) })
 
   const onSubmit = (data: LoginFormProps) => {
     console.log(data)

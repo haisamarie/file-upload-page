@@ -24,7 +24,7 @@ export const InputTextWithLabel = <FORM_TYPE extends FieldValues>({
       <label className={styles['label-wrap']}>
         <span className={styles['label-text']}>{label}</span>
         <InputControl name={name} control={control} type={type} />
-        {error && <span>{error}</span>}
+        {error && <p className={styles['error-text']}>{error}</p>}
       </label>
     </div>
   )
