@@ -19,8 +19,13 @@ export const ProfileForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ProfileFormProps>({
-    mode: 'onChange',
+    mode: 'onSubmit',
     resolver: zodResolver(profileSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      division: '',
+    },
   })
 
   const onSubmit = (data: ProfileFormProps) => {

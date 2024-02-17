@@ -18,7 +18,11 @@ export const LoginForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormProps>({ mode: 'onChange', resolver: zodResolver(loginSchema) })
+  } = useForm<LoginFormProps>({
+    mode: 'onSubmit',
+    resolver: zodResolver(loginSchema),
+    defaultValues: { email: '', password: '' },
+  })
 
   const onSubmit = (data: LoginFormProps) => {
     console.log(data)
