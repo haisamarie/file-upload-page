@@ -2,23 +2,32 @@ import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
+import { BasicTable } from '@/components/uis/Table/BasicTable'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
-
-import { ProfileList } from '@/features/profile/components/uis/ProfileList'
 
 import styles from './styles.module.scss'
 
-const File = () => {
-  const userData = {
-    name: '山田花子',
-    email: 'example.co.jp',
-    department: 'システム本部',
-  }
+type TableColumn = {
+  label: string
+  value: string
+}
+type TableData = {
+  [key: string]: string
+}
 
-  const items = [
-    { term: '氏名', description: userData.name },
-    { term: 'メールアドレス', description: userData.email },
-    { term: '事業部', description: userData.department },
+const File = () => {
+  const columns: TableColumn[] = [
+    { label: 'ファイル', value: 'file' },
+    { label: '説明', value: 'memo' },
+    { label: '申請日', value: 'create_at' },
+  ]
+
+  const data: TableData[] = [
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
   ]
   return (
     <>
@@ -29,12 +38,11 @@ const File = () => {
           <PageTitle title='File' />
 
           <Section>
-            <ProfileList items={items} />
+            <BasicTable columns={columns} data={data} />
           </Section>
         </Main>
       </div>
     </>
   )
 }
-
 export default File
