@@ -28,6 +28,11 @@ const File = () => {
       memo: 'システム本部',
       create_at: '2024-09-12',
     },
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
   ]
   return (
     <>

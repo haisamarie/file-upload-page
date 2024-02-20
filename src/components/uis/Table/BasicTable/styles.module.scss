@@ -1,19 +1,22 @@
 @use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
 
-.wrap {
-  display: flex;
-  padding: 24px 0;
+.table {
+  width: 100%;
 }
 
-.wrap:not(:last-child) {
+.th {
   border-bottom: 1px solid $gray-light;
+  font-size: rem(14px);
+  padding: 12px 24px;
 }
 
-.caption {
-  width: 30%;
+.td {
+  padding: 24px;
 }
 
-.text {
-  padding-left: 1em;
-  width: 65%;
+.tr:not(:last-child) {
+  .td {
+    border-bottom: 1px solid $gray-light;
+  }
 }
