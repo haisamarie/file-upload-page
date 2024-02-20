@@ -14,7 +14,7 @@ export const InputControl = <FORM_TYPE extends FieldValues>({
   control,
   type,
   placeholder,
-}: InputControlProps<FORM_TYPE>): React.ReactElement => {
+}: InputControlProps<FORM_TYPE>) => {
   const { field } = useController({
     name,
     control,
