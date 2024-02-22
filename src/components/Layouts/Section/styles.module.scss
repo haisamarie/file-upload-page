@@ -1,0 +1,11 @@
+@use '@/styles/settings/color' as *;
+
+.section {
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 1px rgb(0 0 0 / 20%);
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 40px;
+  width: 80%;
+}

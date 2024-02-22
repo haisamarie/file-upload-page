@@ -1,0 +1,10 @@
+@use '@/styles/settings/color' as *;
+
+.main {
+  background-color: $gray-very-light;
+  height: 100%;
+  margin-top: 70px;
+  overflow: scroll;
+  padding: 40px;
+  width: 85%;
+}

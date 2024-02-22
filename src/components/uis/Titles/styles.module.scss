@@ -1,0 +1,11 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.page-title {
+  color: $black;
+  font-size: rem(42px);
+  font-weight: 600;
+  margin: 0 auto 24px;
+  max-width: 700px;
+  width: 80%;
+}

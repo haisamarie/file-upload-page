@@ -1,0 +1,7 @@
+@use '@/styles/settings/color' as *;
+
+.button-wrap {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

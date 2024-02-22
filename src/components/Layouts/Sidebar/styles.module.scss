@@ -1,0 +1,28 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.side-bar {
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  height: 100%;
+  margin-top: 70px;
+  width: 15%;
+}
+
+.nav-wrap {
+  width: 100%;
+}
+
+.nav-link {
+  display: block;
+  font-size: rem(18px);
+  padding: 1em;
+}
+
+.active-text {
+  background-color: $secondary;
+  display: block;
+  font-size: rem(18px);
+  padding: 1em;
+}
