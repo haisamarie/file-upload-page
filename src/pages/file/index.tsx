@@ -2,6 +2,7 @@ import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
+import { Button } from '@/components/uis/Button'
 import { BasicTableWithPagination } from '@/components/uis/Table/BasicTableWithPagination'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
@@ -65,6 +66,9 @@ const File = () => {
           <Section>
             <BasicTableWithPagination basePath='/file' columns={columns} data={data} />
           </Section>
+          <div className={styles['button-wrap']}>
+            <Button type='submit'>Edit</Button>
+          </div>
         </Main>
       </div>
     </>
