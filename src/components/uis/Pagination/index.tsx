@@ -22,39 +22,48 @@ export const Pagination = ({
     <ul className={styles['paginetion-wrap']}>
       <li className={styles['paginetion-item']}>
         {currentPage > 1 ? (
-          <a href={`${basePath}?${queryParam}=1`}>
+          <a className={styles['paginetion-link']} href={`${basePath}?${queryParam}=1`}>
             <ArrowLeftLastIcon />
           </a>
         ) : (
-          <ArrowLeftLastIcon />
+          <ArrowLeftLastIcon color='#999' />
         )}
       </li>
       <li className={styles['paginetion-item']}>
         {currentPage > 1 ? (
-          <a href={`${basePath}?${queryParam}=${currentPage - 1}`}>
+          <a
+            className={styles['paginetion-link']}
+            href={`${basePath}?${queryParam}=${currentPage - 1}`}
+          >
             <ArrowLeftIcon />
           </a>
         ) : (
-          <ArrowLeftIcon />
+          <ArrowLeftIcon color='#999' />
         )}
       </li>
       <p className={styles['text']}>{` ${currentPage} / ${totalPages}`}</p>
       <li className={styles['paginetion-item']}>
         {currentPage < totalPages ? (
-          <a href={`${basePath}?${queryParam}=${currentPage + 1}`}>
+          <a
+            className={styles['paginetion-link']}
+            href={`${basePath}?${queryParam}=${currentPage + 1}`}
+          >
             <ArrowRightIcon />
           </a>
         ) : (
-          <ArrowRightIcon />
+          <ArrowRightIcon color='#999' />
         )}
       </li>
       <li className={styles['paginetion-item']}>
         {currentPage < totalPages ? (
-          <a href={`${basePath}?${queryParam}=${totalPages}`}>
+          <a
+            className={styles['paginetion-link']}
+            href={`${basePath}?${queryParam}=${totalPages}`}
+          >
             <ArrowRightLastIcon />
           </a>
         ) : (
-          <ArrowRightLastIcon />
+          <ArrowRightLastIcon color='#999' />
         )}
       </li>
     </ul>

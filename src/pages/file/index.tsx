@@ -2,7 +2,7 @@ import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
-import { BasicTable } from '@/components/uis/Table/BasicTable'
+import { BasicTableWithPagination } from '@/components/uis/Table/BasicTableWithPagination'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
 import styles from './styles.module.scss'
@@ -33,6 +33,26 @@ const File = () => {
       memo: 'システム本部',
       create_at: '2024-09-12',
     },
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
+    {
+      file: 'example.png',
+      memo: 'システム本部',
+      create_at: '2024-09-12',
+    },
   ]
   return (
     <>
@@ -43,7 +63,7 @@ const File = () => {
           <PageTitle title='File' />
 
           <Section>
-            <BasicTable columns={columns} data={data} />
+            <BasicTableWithPagination basePath='/file' columns={columns} data={data} />
           </Section>
         </Main>
       </div>

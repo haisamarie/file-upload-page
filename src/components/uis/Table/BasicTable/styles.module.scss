@@ -12,11 +12,6 @@
 }
 
 .td {
+  border-bottom: 1px solid $gray-light;
   padding: 24px;
-}
-
-.tr:not(:last-child) {
-  .td {
-    border-bottom: 1px solid $gray-light;
-  }
 }
