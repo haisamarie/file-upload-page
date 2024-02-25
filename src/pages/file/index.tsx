@@ -9,6 +9,8 @@ import { Modal } from '@/components/uis/Modal'
 import { BasicTableWithPagination } from '@/components/uis/Table/BasicTableWithPagination'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
+import { FileForm } from '@/features/file/components/uis/FileForm'
+
 import styles from './styles.module.scss'
 
 type TableColumn = {
@@ -27,7 +29,7 @@ const File = () => {
 
   const columns: TableColumn[] = [
     { label: 'ファイル', value: 'file' },
-    { label: '説明', value: 'memo' },
+    { label: '備考', value: 'memo' },
     { label: '申請日', value: 'create_at' },
   ]
 
@@ -80,10 +82,9 @@ const File = () => {
             </Button>
           </div>
           <Modal isOpen={modalIsOpen} onRequestClose={closeModal} title='Fileを編集する'>
-            aaaa
+            <FileForm />
           </Modal>
         </Main>
-        dddddddddd
       </div>
     </>
   )

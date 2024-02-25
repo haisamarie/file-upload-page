@@ -1,0 +1,15 @@
+@use '@/styles/settings/color' as *;
+
+.textarea {
+  border-bottom: 1px solid $gray-light;
+  padding: 10px;
+  width: 100%;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $blue-light;
+  }
+}
