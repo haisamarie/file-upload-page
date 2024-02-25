@@ -1,6 +1,6 @@
 import { Control, FieldValues, FieldPath } from 'react-hook-form'
 
-import { InputControl } from '@/components/uis/Inputs/InputControl'
+import { InputControl } from '@/components/uis/InputText/InputControl'
 
 import styles from './styles.module.scss'
 
