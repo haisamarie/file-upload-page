@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
+import { InputTextWithLabel } from '@/components/uis/InputText/InputTextWithLabel'
 import { TextareaWithLabel } from '@/components/uis/InputTextarea/TextareaWithLabel'
 
 import styles from './styles.module.scss'
@@ -22,6 +23,14 @@ export const FileForm = () => {
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <InputTextWithLabel
+        error={errors.name?.message}
+        type='text'
+        name='name'
+        label='ファイル名'
+        placeholder='ファイル名を入力してください'
+        control={control}
+      />
       <TextareaWithLabel
         error={errors.name?.message}
         name='name'

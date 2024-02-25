@@ -28,41 +28,47 @@ const File = () => {
   const closeModal = () => setIsOpen(false)
 
   const columns: TableColumn[] = [
-    { label: 'ファイル', value: 'file' },
+    { label: 'ファイル名', value: 'file_name' },
     { label: '備考', value: 'memo' },
     { label: '申請日', value: 'create_at' },
+    { label: 'ダウンロード', value: 'file' },
   ]
 
   const data: TableData[] = [
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
+      memo: 'ここは備考',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
+      memo: 'ここは備考',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
+      memo: 'ここは備考',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
+      memo: 'ここは備考',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
     {
-      file: 'example.png',
-      memo: 'システム本部',
+      file_name: 'test.png',
+      memo: 'ここは備考',
       create_at: '2024-09-12',
+      file: 'example.png',
     },
   ]
   return (

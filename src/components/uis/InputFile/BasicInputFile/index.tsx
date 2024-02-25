@@ -8,31 +8,26 @@ type InputProps = {
   onBlur?: () => void
   inputRef?: Ref<HTMLInputElement>
   disabled?: boolean
-  type: 'email' | 'text' | 'password'
-  placeholder?: string
 }
 
-export const BasicInput = ({
+export const BasicInputFile = ({
   value = '',
   onChange,
   onBlur,
   inputRef,
   disabled,
-  type,
-  placeholder,
   ...props
 }: InputProps): JSX.Element => {
   return (
     <input
-      placeholder={placeholder}
       className={styles['input']}
       ref={inputRef}
       onChange={(e) => onChange(e.target.value)}
       onBlur={onBlur}
       value={value}
-      type={type}
       disabled={disabled}
       {...props}
+      type='file'
     ></input>
   )
 }
