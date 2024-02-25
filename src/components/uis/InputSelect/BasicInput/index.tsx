@@ -8,7 +8,7 @@ type InputProps = {
   onBlur?: () => void
   inputRef?: Ref<HTMLInputElement>
   disabled?: boolean
-  type: 'email' | 'text' | 'password' | 'select'
+  type: 'email' | 'text' | 'password'
   placeholder?: string
 }
 

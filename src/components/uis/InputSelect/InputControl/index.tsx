@@ -5,7 +5,7 @@ import { BasicInput } from '../BasicInput'
 type InputControlProps<FORM_TYPE extends FieldValues> = {
   name: FieldPath<FORM_TYPE>
   control: Control<FORM_TYPE>
-  type: 'email' | 'text' | 'password' | 'select'
+  type: 'email' | 'text' | 'password'
   placeholder: string
 }
 

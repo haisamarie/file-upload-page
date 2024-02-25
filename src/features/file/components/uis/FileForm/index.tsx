@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
-import { TextareaWithLabel } from '@/components/uis/Textarea/TextareaWithLabel'
+import { TextareaWithLabel } from '@/components/uis/InputTextarea/TextareaWithLabel'
 
 import styles from './styles.module.scss'
 
