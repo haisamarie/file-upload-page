@@ -19,7 +19,6 @@ export const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormProps>({
-    mode: 'onSubmit',
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' },
   })

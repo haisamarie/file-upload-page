@@ -4,7 +4,7 @@ export const profileSchema = z.object({
     .string()
     .trim()
     .min(1, '氏名は必須項目です')
-    .max(20, '氏名は50文字以内で入力してください'),
+    .max(20, '氏名は20文字以内で入力してください'),
   email: z
     .string()
     .trim()
