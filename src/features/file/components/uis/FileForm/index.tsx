@@ -1,9 +1,12 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
 import { InputFileWithLabel } from '@/components/uis/InputFile/InputFileWithLabel'
 import { InputTextWithLabel } from '@/components/uis/InputText/InputTextWithLabel'
 import { TextareaWithLabel } from '@/components/uis/InputTextarea/TextareaWithLabel'
+
+import { FileSchema } from '@/features/file/hooks/schemas/validationSchema'
 
 import styles from './styles.module.scss'
 
@@ -17,7 +20,13 @@ export const FileForm = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FileFormProps>({})
+  } = useForm<FileFormProps>({
+    resolver: zodResolver(FileSchema),
+    defaultValues: {
+      fileName: '',
+      memo: '',
+    },
+  })
 
   const onSubmit = (data: FileFormProps) => {
     console.log(data)
@@ -35,7 +44,7 @@ export const FileForm = () => {
       <TextareaWithLabel
         error={errors.memo?.message}
         name='memo'
-        label='備考'
+        label='備考(任意)'
         placeholder='備考を入力してください'
         control={control}
       />
