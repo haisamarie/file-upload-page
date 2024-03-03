@@ -1,33 +1,16 @@
-import React, { Ref } from 'react'
-
 import styles from './styles.module.scss'
 
-type InputProps = {
-  value: string
-  onChange: (value: string) => void
-  onBlur?: () => void
-  inputRef?: Ref<HTMLInputElement>
-  disabled?: boolean
-}
-
-export const BasicInputFile = ({
-  value = '',
-  onChange,
-  onBlur,
-  inputRef,
-  disabled,
-  ...props
-}: InputProps): JSX.Element => {
+export const BasicInputFile = (): JSX.Element => {
   return (
-    <input
-      className={styles['input']}
-      ref={inputRef}
-      onChange={(e) => onChange(e.target.value)}
-      onBlur={onBlur}
-      value={value}
-      disabled={disabled}
-      {...props}
-      type='file'
-    ></input>
+    <div className={styles['wrap']}>
+      <div className={styles['file-wrap']}>
+        <p className={styles['text']}>
+          ※ファイルを選択するかドラックアンドドロップしてください
+        </p>
+        <input className={styles['input-file']} name='imageURL' />
+        <input type='file' className='input-file' />
+      </div>
+      <p className={styles['note']}>※1ファイルの最大サイズは50MBです</p>
+    </div>
   )
 }

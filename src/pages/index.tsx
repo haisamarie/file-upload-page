@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { Header } from '@/components/layouts/Header'
-import { Main } from '@/components/layouts/Main'
-import { Section } from '@/components/layouts/Section'
-import { Sidebar } from '@/components/layouts/Sidebar'
+import { Header } from '@/components/Layouts/Header'
+import { Main } from '@/components/Layouts/Main'
+import { Section } from '@/components/Layouts/Section'
+import { Sidebar } from '@/components/Layouts/Sidebar'
 import { Button } from '@/components/uis/Button'
 import { Modal } from '@/components/uis/Modal'
 import { PageTitle } from '@/components/uis/Titles/PageTite'

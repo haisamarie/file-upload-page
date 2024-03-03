@@ -13,15 +13,13 @@ type FormFieldProps<FORM_TYPE extends FieldValues> = {
 
 export const InputFileWithLabel = <FORM_TYPE extends FieldValues>({
   label,
-  name,
-  control,
   error,
 }: FormFieldProps<FORM_TYPE>): React.ReactElement => {
   return (
     <div>
       <label className={styles['label-wrap']}>
         <span className={styles['label-text']}>{label}</span>
-        <InputFileControl name={name} control={control} />
+        <InputFileControl />
         {error && <p className={styles['error-text']}>{error}</p>}
       </label>
     </div>

@@ -1,5 +1,5 @@
-import { Header } from '@/components/layouts/Header'
-import { Section } from '@/components/layouts/Section'
+import { Header } from '@/components/Layouts/Header'
+import { Section } from '@/components/Layouts/Section'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
 import { LoginForm } from '@/features/login/components/uis/LoginForm'
