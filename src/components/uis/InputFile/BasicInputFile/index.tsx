@@ -7,8 +7,8 @@ export const BasicInputFile = (): JSX.Element => {
         <p className={styles['text']}>
           ※ファイルを選択するかドラックアンドドロップしてください
         </p>
-        <input className={styles['input-file']} name='imageURL' />
-        <input type='file' className='input-file' />
+        <input type='file' className={styles['input-file']} />
+        <button className={styles['file-button']}>ファイルを選択</button>
       </div>
       <p className={styles['note']}>※1ファイルの最大サイズは50MBです</p>
     </div>
