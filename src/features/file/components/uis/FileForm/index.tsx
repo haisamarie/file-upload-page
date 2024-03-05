@@ -33,6 +33,12 @@ export const FileForm = () => {
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <InputFileWithLabel
+        error={errors.file?.message}
+        name='file'
+        label='ファイル'
+        control={control}
+      />
       <InputTextWithLabel
         error={errors.fileName?.message}
         type='text'
@@ -48,13 +54,6 @@ export const FileForm = () => {
         placeholder='備考を入力してください'
         control={control}
       />
-      <InputFileWithLabel
-        error={errors.file?.message}
-        name='file'
-        label='ファイル'
-        control={control}
-      />
-
       <div className={styles['button-wrap']}>
         <Button type='submit'>Submit</Button>
       </div>
