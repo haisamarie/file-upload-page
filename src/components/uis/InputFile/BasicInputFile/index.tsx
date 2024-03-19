@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 export const BasicInputFile = (): JSX.Element => {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [fileName, setFileName] = useState<string>('')
+  const [isDragging, setIsDragging] = useState<boolean>(false) // ドラッグ状態の追跡を一元化
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = event.target.files
@@ -14,10 +15,29 @@ export const BasicInputFile = (): JSX.Element => {
     }
   }
 
-  const handleButtonClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click()
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setIsDragging(true)
+  }
+
+  const handleDragLeave = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setIsDragging(false)
+  }
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    event.stopPropagation()
+    setIsDragging(false)
+    if (event.dataTransfer.files && event.dataTransfer.files.length > 0) {
+      const uploadedFile = event.dataTransfer.files[0]
+      setFileName(uploadedFile.name)
+      event.dataTransfer.clearData()
     }
+  }
+
+  const handleButtonClick = () => {
+    fileInputRef.current?.click()
   }
 
   const handleFileRemove = () => {
@@ -26,10 +46,16 @@ export const BasicInputFile = (): JSX.Element => {
       fileInputRef.current.value = ''
     }
   }
+
   return (
-    <div className={styles['wrap']}>
-      <div className={styles['file-wrap']}>
-        <p className={styles['text']}>
+    <div className={styles.wrap}>
+      <div
+        className={`${styles['file-wrap']} ${isDragging ? styles.dragging : ''}`}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        <p className={styles.text}>
           ※ファイルを選択するかドラックアンドドロップしてください
         </p>
         <input
@@ -37,12 +63,13 @@ export const BasicInputFile = (): JSX.Element => {
           type='file'
           className={styles['input-file']}
           onChange={handleFileChange}
+          style={{ display: 'none' }}
         />
         <button className={styles['file-button']} onClick={handleButtonClick}>
           ファイルを選択
         </button>
       </div>
-      <p className={styles['note']}>※1ファイルの最大サイズは50MBです</p>
+      <p className={styles.note}>※1ファイルの最大サイズは50MBです</p>
 
       <div className={styles['file-up-wrap']}>
         {fileName ? (

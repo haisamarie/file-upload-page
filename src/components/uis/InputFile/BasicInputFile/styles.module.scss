@@ -17,6 +17,11 @@
   width: 100%;
 }
 
+.dragging {
+  background-color: #f1f1f1;
+  border: 2px dashed #007bff;
+}
+
 .text {
   font-size: rem(14px);
 }
