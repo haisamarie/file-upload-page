@@ -1,0 +1,26 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.paginetion-wrap {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.paginetion-item {
+  align-items: center;
+  display: flex;
+  opacity: 0.6;
+}
+
+.paginetion-link {
+  align-items: center;
+  display: flex;
+  opacity: 1;
+}
+
+.text {
+  display: inline-block;
+  font-size: rem(14px);
+}

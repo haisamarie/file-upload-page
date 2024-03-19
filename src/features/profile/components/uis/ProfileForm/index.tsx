@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/uis/Button'
-import { InputTextWithLabel } from '@/components/uis/Inputs/InputTextWithLabel'
+import { InputTextWithLabel } from '@/components/uis/InputText/InputTextWithLabel'
 
 import { profileSchema } from '@/features/profile/hooks/schemas/validationSchema'
 

@@ -1,0 +1,17 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.table {
+  width: 100%;
+}
+
+.th {
+  border-bottom: 1px solid $gray-light;
+  font-size: rem(14px);
+  padding: 12px 24px;
+}
+
+.td {
+  border-bottom: 1px solid $gray-light;
+  padding: 24px;
+}

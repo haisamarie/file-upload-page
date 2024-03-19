@@ -2,17 +2,17 @@ import React, { Ref } from 'react'
 
 import styles from './styles.module.scss'
 
-type InputProps = {
+type InputTextProps = {
   value: string
   onChange: (value: string) => void
   onBlur?: () => void
   inputRef?: Ref<HTMLInputElement>
   disabled?: boolean
-  type: 'email' | 'text' | 'password'
+  type: 'email' | 'text' | 'password' | 'select'
   placeholder?: string
 }
 
-export const BasicInput = ({
+export const BasicInputText = ({
   value = '',
   onChange,
   onBlur,
@@ -21,7 +21,7 @@ export const BasicInput = ({
   type,
   placeholder,
   ...props
-}: InputProps): JSX.Element => {
+}: InputTextProps): JSX.Element => {
   return (
     <input
       placeholder={placeholder}
