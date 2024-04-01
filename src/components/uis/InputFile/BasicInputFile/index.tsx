@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export const BasicInputFile = (): JSX.Element => {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [fileName, setFileName] = useState<string>('')
-  const [isDragging, setIsDragging] = useState<boolean>(false) // ドラッグ状態の追跡を一元化
+  const [isDragging, setIsDragging] = useState<boolean>(false)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = event.target.files
@@ -65,7 +65,11 @@ export const BasicInputFile = (): JSX.Element => {
           onChange={handleFileChange}
           style={{ display: 'none' }}
         />
-        <button className={styles['file-button']} onClick={handleButtonClick}>
+        <button
+          type='button'
+          className={styles['file-button']}
+          onClick={handleButtonClick}
+        >
           ファイルを選択
         </button>
       </div>
@@ -75,7 +79,11 @@ export const BasicInputFile = (): JSX.Element => {
         {fileName ? (
           <>
             <span>{fileName}</span>
-            <button onClick={handleFileRemove} className={styles['remove-button']}>
+            <button
+              type='button'
+              onClick={handleFileRemove}
+              className={styles['remove-button']}
+            >
               ×
             </button>
           </>
