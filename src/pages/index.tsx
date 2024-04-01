@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useModal } from '@/utils/hooks/useModal'
 
-import { Header } from '@/components/Layouts/Header'
-import { Main } from '@/components/Layouts/Main'
-import { Section } from '@/components/Layouts/Section'
-import { Sidebar } from '@/components/Layouts/Sidebar'
+import { Header } from '@/components/layouts/Header'
+import { Main } from '@/components/layouts/Main'
+import { Section } from '@/components/layouts/Section'
+import { Sidebar } from '@/components/layouts/Sidebar'
 import { Button } from '@/components/uis/Button'
 import { Modal } from '@/components/uis/Modal'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
@@ -26,10 +26,7 @@ const Home = () => {
     { term: '事業部', description: userData.department },
   ]
 
-  const [modalIsOpen, setIsOpen] = useState(false)
-
-  const openModal = () => setIsOpen(true)
-  const closeModal = () => setIsOpen(false)
+  const { isOpen, openModal, closeModal } = useModal()
 
   return (
     <>
@@ -46,11 +43,7 @@ const Home = () => {
               Edit
             </Button>
           </div>
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            title='profileを編集する'
-          >
+          <Modal isOpen={isOpen} onRequestClose={closeModal} title='profileを編集する'>
             <ProfileForm />
           </Modal>
         </Main>
