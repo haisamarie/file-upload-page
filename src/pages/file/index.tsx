@@ -1,24 +1,72 @@
+import { useModal } from '@/utils/hooks/useModal'
+
 import { Header } from '@/components/layouts/Header'
 import { Main } from '@/components/layouts/Main'
 import { Section } from '@/components/layouts/Section'
 import { Sidebar } from '@/components/layouts/Sidebar'
+import { Button } from '@/components/uis/Button'
+import { Modal } from '@/components/uis/Modal'
+import { BasicTableWithPagination } from '@/components/uis/Table/BasicTableWithPagination'
 import { PageTitle } from '@/components/uis/Titles/PageTite'
 
-import { ProfileList } from '@/features/profile/components/uis/ProfileList'
+import { FileForm } from '@/features/file/components/uis/FileForm'
 
 import styles from './styles.module.scss'
 
-const File = () => {
-  const userData = {
-    name: '山田花子',
-    email: 'example.co.jp',
-    department: 'システム本部',
-  }
+type TableColumn = {
+  label: string
+  value: string
+}
+type TableData = {
+  [key: string]: string
+}
 
-  const items = [
-    { term: '氏名', description: userData.name },
-    { term: 'メールアドレス', description: userData.email },
-    { term: '事業部', description: userData.department },
+const File = () => {
+  const { isOpen, openModal, closeModal } = useModal()
+
+  const columns: TableColumn[] = [
+    { label: 'ファイル名', value: 'file_name' },
+    { label: '備考', value: 'memo' },
+    { label: '申請日', value: 'create_at' },
+    { label: 'ダウンロード', value: 'file' },
+  ]
+
+  const data: TableData[] = [
+    {
+      file_name: 'test.png',
+      memo: 'ここは備考',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
+    {
+      file_name: 'test.png',
+      memo: 'ここは備考',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
+    {
+      file_name: 'test.png',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
+    {
+      file_name: 'test.png',
+      memo: 'ここは備考',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
+    {
+      file_name: 'test.png',
+      memo: 'ここは備考',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
+    {
+      file_name: 'test.png',
+      memo: 'ここは備考',
+      create_at: '2024-09-12',
+      file: 'example.png',
+    },
   ]
   return (
     <>
@@ -29,12 +77,19 @@ const File = () => {
           <PageTitle title='File' />
 
           <Section>
-            <ProfileList items={items} />
+            <BasicTableWithPagination basePath='/file' columns={columns} data={data} />
           </Section>
+          <div className={styles['button-wrap']}>
+            <Button type='button' onClick={openModal}>
+              Edit
+            </Button>
+          </div>
+          <Modal isOpen={isOpen} onRequestClose={closeModal} title='Fileを編集する'>
+            <FileForm />
+          </Modal>
         </Main>
       </div>
     </>
   )
 }
-
 export default File

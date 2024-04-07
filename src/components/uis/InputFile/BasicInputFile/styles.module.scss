@@ -1,0 +1,57 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.wrap {
+  width: 100%;
+}
+
+.file-wrap {
+  align-items: center;
+  background-color: #f5f6f7;
+  border: 1px solid #c5c6c8;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  padding: 24px;
+  width: 100%;
+}
+
+.dragging {
+  background-color: #f1f1f1;
+  border: 2px dashed #007bff;
+}
+
+.text {
+  font-size: rem(14px);
+}
+
+.note {
+  font-size: rem(12px);
+  margin-top: 12px;
+}
+
+.input-file {
+  display: none;
+}
+
+.file-button {
+  border: solid 1px gray;
+  box-shadow: 0 1px 1px 1px rgb(0 0 0 / 20%);
+  cursor: pointer;
+  font-size: rem(14px);
+  padding: 2px 6px;
+}
+
+.file-up-wrap {
+  border-bottom: 1px solid #999;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.default-file-text {
+  color: #999;
+}

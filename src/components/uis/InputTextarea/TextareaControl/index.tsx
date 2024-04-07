@@ -1,32 +1,29 @@
 import { Control, FieldPath, useController, FieldValues } from 'react-hook-form'
 
-import { BasicInput } from '../BasicInput'
+import { BasicTextarea } from '../BasicTextarea'
 
 type InputControlProps<FORM_TYPE extends FieldValues> = {
   name: FieldPath<FORM_TYPE>
   control: Control<FORM_TYPE>
-  type: 'email' | 'text' | 'password'
   placeholder: string
 }
 
-export const InputControl = <FORM_TYPE extends FieldValues>({
+export const TextareaControl = <FORM_TYPE extends FieldValues>({
   name,
   control,
-  type,
   placeholder,
-}: InputControlProps<FORM_TYPE>): React.ReactElement => {
+}: InputControlProps<FORM_TYPE>) => {
   const { field } = useController({
     name,
     control,
   })
 
   return (
-    <BasicInput
+    <BasicTextarea
       inputRef={field.ref}
       onChange={field.onChange}
       onBlur={field.onBlur}
       value={field.value as string}
-      type={type}
       placeholder={placeholder}
     />
   )

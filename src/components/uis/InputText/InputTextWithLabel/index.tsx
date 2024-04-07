@@ -1,6 +1,6 @@
 import { Control, FieldValues, FieldPath } from 'react-hook-form'
 
-import { InputControl } from '@/components/uis/Inputs/InputControl'
+import { InputTextControl } from '@/components/uis/InputText/InputTextControl'
 
 import styles from './styles.module.scss'
 
@@ -25,7 +25,7 @@ export const InputTextWithLabel = <FORM_TYPE extends FieldValues>({
     <div>
       <label className={styles['label-wrap']}>
         <span className={styles['label-text']}>{label}</span>
-        <InputControl
+        <InputTextControl
           placeholder={placeholder}
           name={name}
           control={control}

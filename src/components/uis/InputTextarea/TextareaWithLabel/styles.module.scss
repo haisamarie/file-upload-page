@@ -1,0 +1,39 @@
+@use '@/styles/settings/color' as *;
+@use '@/styles/settings/function' as *;
+
+.label-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.label-text {
+  color: $secondary;
+  display: block;
+  font-size: rem(14px);
+  padding: 10px 0;
+  width: 100%;
+}
+
+.input {
+  border-bottom: 2px solid $gray-light;
+  padding: 10px;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-bottom: 2px solid $blue-main;
+  }
+}
+
+.error-text {
+  color: $red-main;
+  font-size: 12px;
+  margin: 8px 16px;
+  text-align: left;
+  width: 100%;
+}
